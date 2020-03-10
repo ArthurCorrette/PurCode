@@ -1,5 +1,6 @@
 public class Joueur
 {
+	// ça marche pour pitot
     private De de;
 	public int PtsDeVies { get; private set; }
 	public bool EstVivant
