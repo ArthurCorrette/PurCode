@@ -15,10 +15,6 @@ namespace ProjetCodeTextuel
 			return random.Next(1, 7);
 		}
 
-		public static int LanceLeDe(int valeur)
-		{
-			return random.Next(1, valeur);
-		}
 	}
 
 }

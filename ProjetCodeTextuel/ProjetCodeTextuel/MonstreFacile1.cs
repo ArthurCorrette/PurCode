@@ -9,14 +9,12 @@ namespace ProjetCodeTextuel
 		public class MonstreFacile1
 		{
 			private const int degats = 10;
-			protected De1 de;
 			public bool EstVivant { get; private set; }
 		
 		
 
 			public MonstreFacile1()
 			{
-				de = new De1();
 				EstVivant = true;
 			}
 
@@ -35,7 +33,7 @@ namespace ProjetCodeTextuel
 
 			public int LanceLeDe()
 			{
-				return de.LanceLeDe();
+				return De1.LanceLeDe();
 			}
 		}
 	

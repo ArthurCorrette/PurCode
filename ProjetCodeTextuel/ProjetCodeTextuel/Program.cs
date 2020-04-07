@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-class Program
+
+namespace ProjetCodeTextuel
+{
+
+ public class Program
 
 {
 	private static Random random = new Random();
 	
 	static void Main(string[] args)
 	{
-		Jeu1();
+			De1.LanceLeDe();
 	}
 
 	private static void Jeu1()
 	{
-		Joueur nicolas = new Joueur(150);
+		Joueur Kevin = new Joueur(150);
 		int cptFacile = 0;
 		int cptDifficile = 0;
-		while (nicolas.EstVivant)
+		while (Kevin.EstVivant)
 		{
 			MonstreFacile1 monstre = FabriqueDeMonstre();
-			while (monstre.EstVivant && nicolas.EstVivant)
+			while (monstre.EstVivant && Kevin.EstVivant)
 			{
-				nicolas.Attaque(monstre);
+				Kevin.Attaque(monstre);
 				if (monstre.EstVivant)
-					monstre.Attaque(nicolas);
+					monstre.Attaque(Kevin);
 			}
 
-			if (nicolas.EstVivant)
+			if (Kevin.EstVivant)
 			{
 				if (monstre is MonstreDifficile1)
 					cptDifficile++;
@@ -44,11 +48,12 @@ class Program
 		Console.WriteLine("Bravo !!! Vous avez tué {0} monstres faciles et {1} monstres difficiles. Vous avez {2} points.", cptFacile, cptDifficile, cptFacile + cptDifficile * 2);
 	}
 
-	private static MonstreFacile FabriqueDeMonstre()
+	private static MonstreFacile1 FabriqueDeMonstre()
 	{
 		if (random.Next(2) == 0)
-			return new MonstreFacile();
+			return new MonstreFacile1();
 		else
-			return new MonstreDifficile();
+			return new MonstreDifficile1();
 	}
+}
 }
